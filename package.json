@@ -1,7 +1,7 @@
 {
   "name": "smartweave-testing",
-  "version": "0.0.0",
-  "description": "A test client for SmartWeave contracts.",
+  "version": "0.0.1",
+  "description": "A testing client for SmartWeave contracts.",
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {

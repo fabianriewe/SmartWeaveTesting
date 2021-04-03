@@ -1,6 +1,6 @@
 # SmartWeave Testing
 
-A test client for SmartWeave contracts. You can execute any kind of `interactWrite` input against your contract. It does not require any connection to Arweave.
+A testing client for SmartWeave contracts. You can execute any kind of `interactWrite` input against your contract. It does not require any connection to Arweave.
 This enables fast and reliable testing. The new state
 of the contract will be stored and by this enabling multi input testing.
 ## Installation

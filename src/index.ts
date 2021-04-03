@@ -1,8 +1,8 @@
 class SmartWeaveTester {
-  private handle;
-  public caller;
+  private handle: Function;
+  public caller: string;
 
-  public state;
+  public state: Object;
 
   public block = {
     height: 0,
@@ -37,3 +37,5 @@ class SmartWeaveTester {
     return state;
   }
 }
+
+export default SmartWeaveTester;
