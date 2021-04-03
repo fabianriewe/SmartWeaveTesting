@@ -10,7 +10,7 @@ yarn add --dev smartweave-testing
 
 ### Usage
 ```ts
-import { SmartWeaveTester } from "smartweave-testing"
+import SmartWeaveTester from "smartweave-testing"
 import { handle } from [my-contract]
 
 const caller = "..." // -> e.g your Arweave Address
@@ -31,7 +31,7 @@ Every time you execute an action, the block height will increase by 1. You can u
 
 ### Examples
 ```ts
-import { SmartWeaveTester } from "smartweave-testing"
+import SmartWeaveTester from "smartweave-testing"
 import { handle } from [my-contract]
 
 const caller = "..." // -> e.g your Arweave Address
