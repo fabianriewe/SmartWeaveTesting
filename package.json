@@ -1,0 +1,23 @@
+{
+  "name": "smartweave-testing",
+  "version": "0.0.0",
+  "description": "A test client for SmartWeave contracts.",
+  "main": "dist/index",
+  "types": "dist/index",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabianriewe/SmartWeaveTesting.git"
+  },
+  "author": "Fabian Riewe <fabian@kyve.network>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabianriewe/SmartWeaveTesting/issues"
+  },
+  "homepage": "https://github.com/fabianriewe/SmartWeaveTesting#readme",
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
+}
