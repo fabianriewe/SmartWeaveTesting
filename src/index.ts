@@ -1,17 +1,42 @@
+import Arweave from "arweave";
+
+const arweave = new Arweave({
+  host: "arweave.net",
+  port: 443,
+  protocol: "https",
+})
+
 class SmartWeaveTester {
   private handle: Function;
   public caller: string;
 
   public state: Object;
 
+  // public smartweave extensions
   public block = {
     height: 0,
   };
 
-  constructor(handle: Function, initialState: Object, caller: string) {
+  public arweave = {
+    ar: arweave.ar,
+    utils: arweave.utils,
+    wallets: arweave.wallets,
+    crypto: arweave.crypto,
+  }
+
+  constructor(handle: Function, initialState: Object, caller: string, customArweave?: Arweave) {
     this.handle = handle;
     this.caller = caller;
     this.state = initialState;
+
+    if (customArweave) {
+      this.arweave = {
+        ar: customArweave.ar,
+        utils: customArweave.utils,
+        wallets: customArweave.wallets,
+        crypto: customArweave.crypto,
+      }
+    }
 
     // @ts-ignore
     global.SmartWeave = this;

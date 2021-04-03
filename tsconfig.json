@@ -2,7 +2,8 @@
   "compilerOptions": {
     "strict": true,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "esModuleInterop": true
   },
   "include": ["src/index.ts"]
 }

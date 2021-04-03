@@ -1,6 +1,6 @@
 {
   "name": "smartweave-testing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A testing client for SmartWeave contracts.",
   "main": "dist/index",
   "types": "dist/index",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/fabianriewe/SmartWeaveTesting#readme",
   "devDependencies": {
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "arweave": "^1.10.13"
   }
 }
