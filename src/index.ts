@@ -17,6 +17,7 @@ class SmartWeaveTester {
     height: 0,
   };
 
+
   public arweave = {
     ar: arweave.ar,
     utils: arweave.utils,

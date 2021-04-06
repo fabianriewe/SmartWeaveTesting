@@ -3,7 +3,11 @@
     "strict": true,
     "declaration": true,
     "outDir": "dist",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "moduleResolution": "Node"
   },
-  "include": ["src/index.ts"]
+  "include": [
+    "src/index.ts"
+  ]
 }
