@@ -1,6 +1,6 @@
 {
   "name": "smartweave-testing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A testing client for SmartWeave contracts.",
   "main": "dist/index",
   "types": "dist/index",
