@@ -29,6 +29,19 @@ If your contract uses `SmartWeave.block.height`, the client will make use of it'
 Every time you execute an action, the block height will increase by 1. You can use
 `smartweave.block.height = ...` to manually adjust the block height.
 
+### Setting transaction information
+If you want to use custom transaction information like `tags`, `quantity` or a target, you can add
+these into the constructor or the `execute` function: 
+```ts
+import {TransactionInput} from "smartweave-testing/faces";
+
+const txInformation: TransactionInput = {
+  quantity: {winston: "1"} // -> quantity in winston,
+  target: "...."
+} 
+result = await smartweave.execute(input, true, txInformation);
+```
+
 ### Examples
 ```ts
 import SmartWeaveTester from "smartweave-testing"
