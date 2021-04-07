@@ -1,5 +1,5 @@
 export interface Transaction {
-  id: number
+  id: string
   owner: string,
   target?: string,
   tags?: Record<string, string | string[]>,

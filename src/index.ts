@@ -7,6 +7,11 @@ const arweave = new Arweave({
   protocol: "https",
 })
 
+const randomID = () => {
+  // from https://gist.github.com/6174/6062387#gistcomment-2651745
+  return [...Array(43)].map(i => (~~(Math.random() * 36)).toString(36)).join('')
+}
+
 class SmartWeaveTester {
   private handle: Function;
   public caller: string;
@@ -17,7 +22,6 @@ class SmartWeaveTester {
   public block: Block;
 
   public transaction: Transaction;
-  private transactionID: number = 0;
 
 
   public arweave = {
@@ -37,7 +41,7 @@ class SmartWeaveTester {
     }
 
     this.transaction = {
-      id: this.transactionID++,
+      id: randomID(),
       owner: this.caller,
       target: interactionTX?.target,
       tags: interactionTX?.tags,
@@ -77,7 +81,7 @@ class SmartWeaveTester {
 
     // generate new transaction
     this.transaction = {
-      id: this.transactionID++,
+      id: randomID(),
       owner: this.caller,
       target: interactionTX?.target,
       tags: interactionTX?.tags,
