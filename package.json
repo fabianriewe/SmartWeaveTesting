@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "A testing client for SmartWeave contracts.",
   "main": "dist/index",
-  "types": "dist/index",
+  "types": "dist/faces",
   "scripts": {
     "build": "tsc"
   },

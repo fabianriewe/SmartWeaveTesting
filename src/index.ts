@@ -1,4 +1,5 @@
 import Arweave from "arweave";
+import {Block, Transaction, TransactionInput} from "./faces";
 
 const arweave = new Arweave({
   host: "arweave.net",
@@ -13,9 +14,10 @@ class SmartWeaveTester {
   public state: Object;
 
   // public smartweave extensions
-  public block = {
-    height: 0,
-  };
+  public block: Block;
+
+  public transaction: Transaction;
+  private transactionID: number = 0;
 
 
   public arweave = {
@@ -25,10 +27,23 @@ class SmartWeaveTester {
     crypto: arweave.crypto,
   }
 
-  constructor(handle: Function, initialState: Object, caller: string, customArweave?: Arweave) {
+  constructor(handle: Function, initialState: Object, caller: string, customArweave?: Arweave, interactionTX?: TransactionInput) {
     this.handle = handle;
     this.caller = caller;
     this.state = initialState;
+
+    this.block = {
+      height: 0,
+    }
+
+    this.transaction = {
+      id: this.transactionID++,
+      owner: this.caller,
+      target: interactionTX?.target,
+      tags: interactionTX?.tags,
+      quantity: interactionTX?.quantity?.winston,
+      rewards: interactionTX?.rewards
+    }
 
     if (customArweave) {
       this.arweave = {
@@ -50,7 +65,7 @@ class SmartWeaveTester {
     };
   }
 
-  async execute(input: object, updateState: boolean = true) {
+  async execute(input: object, updateState: boolean = true, interactionTX?: TransactionInput) {
     const state = (
       await this.handle(this.state, {caller: this.caller, input})
     ).state;
@@ -59,6 +74,16 @@ class SmartWeaveTester {
 
     // simulate block generation
     this.block.height++;
+
+    // generate new transaction
+    this.transaction = {
+      id: this.transactionID++,
+      owner: this.caller,
+      target: interactionTX?.target,
+      tags: interactionTX?.tags,
+      quantity: interactionTX?.quantity?.winston,
+      rewards: interactionTX?.rewards
+    }
 
     return state;
   }
